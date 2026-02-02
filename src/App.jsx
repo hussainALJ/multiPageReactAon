@@ -9,7 +9,7 @@ function App() {
     <>
     <Routes>
       <Route index element={<Home />} />
-      <Route path='/post/:id' element={<Post />} />
+      <Route path='/:id' element={<Post />} />
       <Route path='/add-post/' element={<AddPost />} />
     </Routes>
     </>

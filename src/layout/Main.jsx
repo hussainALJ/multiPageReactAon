@@ -1,12 +1,10 @@
 import Posts from '../components/Posts.jsx'
+import Hero from '../components/Hero.jsx'
 
 function Main () {
     return (
         <main>
-            <section className="hero">
-                <span>Blog</span>
-                <h1>Inspiration from <br />real journeys</h1>
-            </section>
+            <Hero />
             <Posts />
         </main>
     )

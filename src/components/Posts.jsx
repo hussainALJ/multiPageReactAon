@@ -12,7 +12,6 @@ function Posts() {
       const response = await axios.get(
         "https://jsonplaceholder.typicode.com/posts",
       );
-      console.log(response.data);
       setArticles(response.data);
     } catch (err) {
       setError(err.message);
@@ -40,7 +39,7 @@ function Posts() {
               return (
                 <div key={article.id} className="article flex">
                   <hr />
-                  <Link to={`/posts/${article.id}`}>
+                  <Link to={`/${article.id}`}>
                     <h3 style={{ maxWidth: "400px" }}>{article.title}</h3>
                   </Link>
                 </div>

@@ -1,3 +1,11 @@
+@keyframes slidIn{
+    from {
+        transform: translateX(100%);
+    } to {
+        transform: translateX(0%);
+    }
+}
+
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -22,6 +30,9 @@
     padding: 15px;
     border-radius: 14px 14px 0 0;
     box-shadow: 0px 0px 18px #e6e8ea;
+    min-height: 100vh;
+    animation: 200ms ease  slidIn;
+
 }
 
 .articles {
