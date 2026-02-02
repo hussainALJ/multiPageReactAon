@@ -1,0 +1,61 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.flex {
+    display: flex;
+}
+
+.hero {
+    background: linear-gradient(to top, #f6f8fa 10%, #00000000 100%),
+    url(/clouds.jpeg) ;
+    background-position: 75% 57%;
+    color: #fff;
+    padding: 150px 0;
+    text-align: center;
+}
+
+.posts {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 14px 14px 0 0;
+    box-shadow: 0px 0px 18px #e6e8ea;
+}
+
+.articles {
+    margin-top: 50px;
+    font-size: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 0.5fr));
+    justify-content: center;
+    gap: 50px;
+}
+
+@keyframes jumpIn {
+    from {
+        transform: translateY(-10px);
+    } to {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(-100%);
+    } to {
+        transform: translateX(0%);
+    } 
+}
+
+.article {
+    animation: 200ms ease  jumpIn;
+    height: 50px;
+    gap: 20px;
+    overflow: hidden;
+}
+
+.article h3{
+    animation: 300ms  ease slide;
+}
