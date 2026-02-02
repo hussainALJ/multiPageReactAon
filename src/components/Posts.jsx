@@ -28,7 +28,10 @@ function Posts() {
   return (
     <div className="container">
       <section className="posts">
-        <h2 style={{ fontSize: "20px" }}>Articles</h2>
+        <div className="flex" style={{justifyContent: "space-between"}}>
+            <h2 style={{ fontSize: "20px" }}>Articles</h2>
+            <Link to='/add-post'><img src="/plus-icon.svg" alt="" width='24px' /></Link>
+        </div>
         {isLoading ? (
           <h3 style={{ textAlign: "center" }}>Loading articles...</h3>
         ) : error ? (
@@ -40,7 +43,7 @@ function Posts() {
                 <div key={article.id} className="article flex">
                   <hr />
                   <Link to={`/${article.id}`}>
-                    <h3 style={{ maxWidth: "400px" }}>{article.title}</h3>
+                    <h3>{article.title}</h3>
                   </Link>
                 </div>
               );

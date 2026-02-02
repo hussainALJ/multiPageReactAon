@@ -33,7 +33,7 @@ function Post() {
       <Hero />
       <div className="container">
         <section className="posts">
-        <Link to='/' end><img src="/left-arrow.svg" alt="" /></Link>
+        <Link to='/' ><img src="/left-arrow.svg" alt="" /></Link>
           {isLoading ? (
             <h3 style={{ textAlign: "center" }}>Loading articles...</h3>
           ) : error ? (
