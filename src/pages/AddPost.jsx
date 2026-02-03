@@ -1,29 +1,27 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Hero from "../components/Hero.jsx";
 import { Link, useNavigate } from "react-router";
+import axios from "axios";
 
 function AddPost() {
-  const [title, setTitle] = useState("");
-
-  const [body, setBody] = useState("");
+    const navigate = useNavigate()
+  const [title, setTitle] = useState('');
+  const [body, setBody] = useState('')
 
   async function handelAddPost() {
     try {
-      const response = await fetch("https://jsonplaceholder.typicode.com/posts",{
-          method: 'POST',
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            title: title,
-            body: body,
-            id: 101,
-          }),
-        },
-      );
-      if (response.ok) useNavigate('/')
+      const response = await axios.post('https://jsonplaceholder.typicode.com/posts', {
+        userId: 11,
+        title: title,
+        body: body
+      }, {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+      })
+      navigate('/')
     } catch (err) {
-      console.log(err.message);
+      console.log(err);
     }
   }
   return (
@@ -33,9 +31,8 @@ function AddPost() {
         <section className="posts">
           <div className="flex" style={{ justifyContent: "space-between" }}>
             <Link to="/">Cancel</Link>
-            <h3 style={{ cursor: "pointer" }} onClick={handelAddPost}>
-              {" "}
-              Add Post{" "}
+            <h3 style={{ cursor: "pointer" }} onClick={() => handelAddPost()}>
+              Add Post
             </h3>
           </div>
           <div className="content flex">
